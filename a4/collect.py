@@ -10,10 +10,10 @@ import sys
 import json
 import re
 
-consumer_key = 'YTvgXYr30WANVgMi1dXWYB2n8'
-consumer_secret = 'rYNvlb2JAsJupz4Mt59BS4F0BhytdeG4yuRnwMVJxxD7b6saLZ'
-access_token = '1650765210-8jfsqI4STC0yJJ5h8VSFkvnyWMzHWjKGWAb5iD6'
-access_token_secret = 'PQBy9a7sSeguJORYh9w4arcIq292Rkg1486DTO5XkmpvO'
+consumer_key = ''
+consumer_secret = ''
+access_token = ''
+access_token_secret = ''
 
 def gettwitter():
     """ Construct an instance of TwitterAPI using the tokens you entered above.
