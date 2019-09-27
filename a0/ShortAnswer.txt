@@ -1,0 +1,76 @@
+Enter your responses inline below and push this file to your private GitHub
+repository.
+
+
+1. Assume I plan to use the friend_overlap function above to quantify the
+similarity of two users. E.g., because 238 is larger than 1, I conclude that
+Jill Stein and Gary Johnson are more similar than Hillary Clinton and Donald
+Trump.
+
+How is this approach misleading? How might you fix it?
+
+
+Answer : 
+Here, 4 candidates are not following the same number of persons.hilary clinton and donald trump follows 762 and 45 respectively, while Drjill stein and gary johnson follows 1648 and 3481 respectively. If candidate is following more persons than there is a high probability of mutual friends with other candidates and vice versa. So, on the basis of friends is not a right parameter from which we can measure the similarity between two users.
+
+If you want to compare similarity using friend_overlap function than number of friends of candidates should be in the same level of range or comparision should be done on other parameters which are also be in the same range or level. 
+
+
+
+
+
+2. Looking at the output of your followed_by_hillary_and_donald function, why
+do you think this user is followed by both Hilary Clinton and Donald Trump,
+who are rivals? Do some web searches to see if you can find out more
+information.
+
+
+
+
+Answer : 
+
+Because the first account is of the white house which posts the updates of entire administration and any politician would follow this account to be in touch with tweets published by white house. The second account is mike pence who is the Vice President of the USA. So, president trump is going to follow his VP's account and hillary clinton also as a politician going to follow account of VP of USA.
+
+
+
+
+3. There is a big difference in how many accounts each candidate follows (Gary
+Johnson follows over 3K accounts, while Donald Trump follows less than
+50). Why do you think this is? How might that affect our analysis?
+
+Answer : 
+
+Donald trump and hillary clinton were major candidates, that means they were very popular to win the election while gary Johnson and jill staine were not much popular to win the election. So the less popular candidate needed more number of friends so that they they can increase their popularity. If they follow more people, people are likely to follow them back because they are candidates for president.  
+
+if the candidates has more friends on twitter, then the possibility of being similar with other candidates can also increase.if they all have approximately same number of friends, then we can conclude the similarity between them. Even if all the candidates has approximately same number of friends, then we can just compare similarities between them based on their friends count. But we will not be able to compute actual similarity between candidades because number of friends on twitter is not going to be same exact number of friends in the actual life.
+
+
+
+
+
+4. The follower graph we've collected is incomplete. To expand it, we would
+have to also collect the list of accounts followed by each of the
+friends. That is, for each user X that Donald Trump follows, we would have to
+also collect all the users that X follows. Assuming we again use the API call
+https://dev.twitter.com/rest/reference/get/friends/ids, how many requests will
+we have to make? Given how Twitter does rate limiting
+(https://dev.twitter.com/rest/public/rate-limiting), approximately how many
+minutes will it take to collect this data?
+
+Answer: 
+
+number of Total request we have to make: 5989
+Calculation:
+For each candidates and their friends, we have to make a new twitter request.
+So 4 candidates +  Total of their friends(1645+3511+784+45) = 5989 number of requests.
+			
+
+total time it will take: 5985 minutes = 99hrs 45 minutes
+calculation:
+(Assumption: time to get response from twitter is very negligible)
+In 15 minutes time window we can only make 15 requests for every friends/ids .
+So we have to wait for 15 minutes, after every 15 requests, 
+so (total requests/ 15 requests) = 399.26 windows ~= 400 windows we need
+after every window we need to wait 15 minutes (400*15) - 15 minutes(we don't have to wait after last 15 requests sent) = 5985 minutes
+
+

@@ -1,0 +1,26 @@
+Number of users collected: 10931
+
+Number of messages collected: 950
+
+Number of communities discovered: 161
+
+Average number of users per community: 67.894410
+
+Instances of positive class found : 283 
+
+Instances of neutral class found 356 : 
+
+Instances of negative class found 311 : 
+
+Example of positive class: 
+Top story: Joe Biden announced $6.3 million haul on opening day of 2020 bid - CNNPolitics https://t.co/qlRRVEOnrL,… https://t.co/GJbPMUlJpC
+score = 2
+
+Example of neutral class : 
+Is it a coincidence that Jill #Biden has a new book out this week?  Joe Biden is getting a lot of publicity.
+score = 0
+
+Example of negative class : 
+If I have to vote for crusty-ass, harass-ass, don’t give a fuck about poor people-ass Joe Biden in 2020, I’m throwing hands.
+score = -18
+

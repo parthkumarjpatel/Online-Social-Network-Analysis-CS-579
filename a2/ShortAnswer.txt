@@ -1,0 +1,21 @@
+1. Looking at the top errors printed by get_top_misclassified, name two ways you would modify your classifier to improve accuracy (it could be features, tokenization, or something else.)
+
+Answer: The accuracy of classifier model is heavily dependent on the type of positive and negative words are used and type of features created for classification.
+
+The two ways you can improve accuracy of classifier models are:
+1. improving tokenization by removing stopwords from the text
+2. add more Postive and Negative Words, so that it can create much better feature and capture more information
+
+2. Implement one of the above methods. How did it affect the results?
+
+I have implemented the secong method adding more positive and Negative words. I have included File of positive and negative words with in the folder in form of text file and modified my code in to a2modified.py file in token_pair_features function.
+
+The result i got is this:
+
+1. In best cross validation result accuracy is improved from 0.77 to 0.79 which is almost 2 % improvement in new modified file and min frequency i got is 5. In second one accuracy is improved from 0.64 to 0.65 and min frequency is 10.
+
+2. top coefficient per class of negative and positive words are also changed. For negative word it is changed from 0.41923 to 0.66113 and for positive words it is changes from 0.38 to 0.52. Ex. token_pair of negative word (is_so) is changed from 0.45 to 0.66. token pair of positive word (it_is) is changed from 0.24 to 0.32.
+
+3. Testing accuracy is changed from 0.73 to 0.765.
+
+4. some of the top misclassified test documents are also changed because of the new added words in text files.

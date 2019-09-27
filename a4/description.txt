@@ -1,0 +1,53 @@
+Running steps:
+    1. python collect.py   output ... 'collectTweetResult.json','cleantweet.json'
+    2. python cluster.py   output ... 'clusteredData.json','graphwithlabel.png','graphwithoutlabel.png'
+    3. python classify.py  output ... 'positiveTweet.json', 'neutralTweet.json', 'negativeTweet.json'
+    4. python summarize.py  output ... 'summarry.txt'
+
+
+Overview: 
+
+2020 Presedential election is around the corner. It looks like that half the democratic party is running for the white house. Officially it's only 20. 
+Recenetly, Joe Biden has announced that he is running for president in 2020. He has run for presedint twice before in 1988 and 2008. He was U.S.Senator from 1973 to 2009 from delawer. He served as 47th vice president of the United states from 2009 to 2017. He is among the best liked figures in the democratic party. 
+He has the ability to connect with working class voters and due to his down to earth personality he has made the already crowded race for the president in 2020 very tough because he is sitting atop the most recent polls. It is his last chance to run for president. 
+In this project, I tried to fetch tweets with keyword "Joe Biden" to check how his presedential bid is received by public. I created the graph between the users who are connected on twitter. Applied girwan newman algorithm to get communities in the graph. Then, i have done sentiment analysis on those tweets using AFINN to check whether the tweet is positive,neutral or negative. 
+
+File wise Description:
+
+1. 	collect.py
+	
+	-> Using TwitterAPI fetch tweets with keyword "Joe biden" for ten times to get about 1000 tweets. Retweets are not being considered.
+	-> Stored them into a "collectTweetResult.json" file.
+	-> Performed Utility function to tokenize tweets by removing links, special characters and stored them into "cleantweet.json"
+
+2. 	cluster.py
+
+	-> Load tweets from previous steps and get all the users mentioned in 'text' part of the tweets.
+	-> Build network graph by mentioned user and stored them into two file : 1."graphwithlabel.png" and 2."graphwithoutlabel.png"
+	-> Applied partition girwan newman algorithm to partition users to cluster and stored cluster with 'screen_name' into json file named "clusteredData.json" 
+
+3.	classify.py
+
+	-> Used AFINN data to score the tokens and rated tweets using those score.
+	-> Classified those twets into positive,neutal and negative and stored them into json file named 'positiveTweet.json', 'neutralTweet.json', 'negativeTweet.json'.
+
+4.	summarize.py
+
+	-> read all the data from the above mentioned previous steps and written results in to 'summary.txt' which consists of the following entries:
+    	1. Number of users collected
+        2. Number of messages collected
+        3. Number of communities discovered
+        4. Average number of users per community
+        5. Instances of positive class found
+        6. Instances of neutral class found
+        7. Instances of negative class found
+        8. Example of positive class and its score
+        9. Example of neutal class and its score
+        10. Example of negative class and its score
+
+Conclusion:
+
+AFINN just weigh on words.It does not see the conext of the text.AFINN will misclassify some data as the words of users used are around the neutral.
+
+the opinoin of public will change as the election will come close and new nominies will come and opponents will start critizing.
+
